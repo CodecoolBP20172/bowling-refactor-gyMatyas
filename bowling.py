@@ -11,6 +11,8 @@ def score(game):
                 result += 10 - get_value(game[current_roll + 1])
             else:
                 result += get_value(game[current_roll + 2])
+        else:
+            result += get_value(game[current_roll])
         if in_first_half and not game[current_roll].upper() == 'X':
             in_first_half = False
         else:
