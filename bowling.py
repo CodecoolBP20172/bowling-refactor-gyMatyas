@@ -7,8 +7,6 @@ def score(game):
             result += 10 - get_value(game[i - 1])
         else:
             result += get_value(game[i])
-        # if not in_first_half:
-            # frame += 1
         if frame < 10  and get_value(game[i]) == 10:
             if game[i] == '/':
                 result += get_value(game[i+1])
@@ -25,5 +23,10 @@ def score(game):
             frame += 1
     return result
 
-def get_value(char):
-    return int(char) if char.isdigit() else 10 if char.upper() in 'X/' else 0 if char == '-' else ValueError
+def get_value(roll):
+    #######
+    # Description: Returns the current roll's score
+    # Inputs: roll - player's current roll
+    # Returns: the value of the roll in number
+    #######
+    return int(roll) if roll.isdigit() else 10 if roll.upper() in 'X/' else 0 if roll == '-' else ValueError
