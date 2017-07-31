@@ -45,4 +45,4 @@ def get_value(roll):
     # Inputs: roll - The player's roll
     # Returns: The value of the roll in number
     """
-    return int(roll) if roll.isdigit() else 10 if roll.upper() in 'X/' else 0 if roll == '-' else ValueError
+    return int(roll) if roll in '123456789' else 10 if roll.upper() in 'X/' else 0 if roll == '-' else ValueError
